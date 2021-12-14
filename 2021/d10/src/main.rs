@@ -44,19 +44,16 @@ fn main() {
             }
         }
         open_chunks.reverse();
-        let score:u64 = open_chunks.iter().fold(0, |score, x| {
-            match x {
-                '(' => score * 5 + 1,
-                '[' => score * 5 + 2,
-                '{' => score * 5 + 3,
-                '<' => score * 5 + 4,
-                _ => score
-            }
+        let score: u64 = open_chunks.iter().fold(0, |score, x| match x {
+            '(' => score * 5 + 1,
+            '[' => score * 5 + 2,
+            '{' => score * 5 + 3,
+            '<' => score * 5 + 4,
+            _ => score,
         });
         part2.push(score);
     }
     part2.sort();
     println!("Solution for Part 1: {}", part1);
-    println!("Solution for Part 2: {}", part2[part2.len()/2]);
+    println!("Solution for Part 2: {}", part2[part2.len() / 2]);
 }
-

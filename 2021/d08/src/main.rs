@@ -1,6 +1,6 @@
 use std::collections::{HashMap, VecDeque};
 use std::fs::File;
-use std::io::{BufReader, BufRead};
+use std::io::{BufRead, BufReader};
 
 fn main() {
     let path = "INPUT08.txt";
@@ -54,7 +54,8 @@ fn main() {
                         unknown_signals.push_back(current_signal);
                     }
                 }
-                6 => {//0,6,9
+                6 => {
+                    //0,6,9
                     if contains_all(&current_signal, mapping.get(&4).unwrap()) {
                         // if it contains all signals from 4 ist a 9
                         mapping.insert(9, current_signal);
@@ -69,7 +70,9 @@ fn main() {
                         unknown_signals.push_back(current_signal)
                     }
                 }
-                _ => { println!("failed"); }
+                _ => {
+                    println!("failed");
+                }
             }
         }
         let mut reversed_mapping: HashMap<&Vec<char>, i8> = HashMap::new();

@@ -30,9 +30,6 @@ fn main() {
     let mut max_height = 0;
     let mut avilable_velocities = HashSet::new();
     loop {
-        if current_step == 4 || current_step == 5 {
-            let c = 0;
-        }
         //calculate intervall of start y velocities that would reach the area
         let lower_y_bound =
             (2.0 * y_range[0] / current_step as f64 + (current_step - 1) as f64) / 2.0;

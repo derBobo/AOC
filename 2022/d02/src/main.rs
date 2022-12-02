@@ -51,7 +51,7 @@ fn calculate(rounds: &Vec<(RPS, RPS)>, part: i32) {
         };
         sum
     });
-    println!("result Part {}: {}", part, sum);
+    println!("result part {}: {}", part, sum);
 }
 fn part2(rounds: &Vec<(RPS, RPS)>) {
     //convert to correct result

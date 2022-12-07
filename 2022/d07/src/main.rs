@@ -7,13 +7,19 @@ fn main() {
     let lines = lines_from_file(input);
     let mut dirs = Vec::new();
     let total_size = parse(&mut lines.into_iter(), &mut dirs);
-    println!("part 1:{}", dirs.iter().filter(|x| **x<=100000).sum::<u32>());
-    let fs_size=70000000;
-    let space_needed=30000000;
-    let space_to_free=total_size+space_needed-fs_size;
-    let mut sorted_dirs =dirs.into_iter().filter(|x|*x>=space_to_free).collect::<Vec<u32>>();
+    println!(
+        "part 1:{}",
+        dirs.iter().filter(|x| **x <= 100000).sum::<u32>()
+    );
+    let fs_size = 70000000;
+    let space_needed = 30000000;
+    let space_to_free = total_size + space_needed - fs_size;
+    let mut sorted_dirs = dirs
+        .into_iter()
+        .filter(|x| *x >= space_to_free)
+        .collect::<Vec<u32>>();
     sorted_dirs.sort();
-    println!("part 2 : {}",sorted_dirs.first().unwrap() );
+    println!("part 2 : {}", sorted_dirs.first().unwrap());
 }
 fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
     let file = File::open(filename).expect("no such file");

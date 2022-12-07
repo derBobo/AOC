@@ -14,12 +14,13 @@ fn main() {
     let fs_size = 70000000;
     let space_needed = 30000000;
     let space_to_free = total_size + space_needed - fs_size;
-    let mut sorted_dirs = dirs
-        .into_iter()
-        .filter(|x| *x >= space_to_free)
-        .collect::<Vec<u32>>();
-    sorted_dirs.sort();
-    println!("part 2 : {}", sorted_dirs.first().unwrap());
+    println!(
+        "part 2 :{}",
+        dirs.into_iter()
+            .filter(|x| *x >= space_to_free)
+            .min()
+            .unwrap()
+    );
 }
 fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
     let file = File::open(filename).expect("no such file");

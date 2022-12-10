@@ -73,7 +73,7 @@ fn part2(rounds: &Vec<(RPS, RPS)>) {
     calculate(&rounds2, 2);
 }
 fn main() {
-    let input = "..\\INPUT02.txt";
+    let input = "INPUT02.txt";
     let rounds = parse1(input);
     calculate(&rounds, 1);
     part2(&rounds);

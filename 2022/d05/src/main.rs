@@ -112,7 +112,7 @@ fn print_stacks(stacks: &Vec<Vec<char>>) {
     println!();
 }
 fn main() {
-    let input = "..\\INPUT05.txt";
+    let input = "INPUT05.txt";
     let taskinput = parse(input);
     part1(taskinput.clone());
     part2(taskinput.clone());

@@ -69,6 +69,6 @@ fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
         .collect()
 }
 fn main() {
-    part1("..\\INPUT03.txt");
-    part2("..\\INPUT03.txt");
+    part1("INPUT03.txt");
+    part2("INPUT03.txt");
 }

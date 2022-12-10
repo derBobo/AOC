@@ -5,7 +5,7 @@ use std::iter::FromIterator;
 use std::path::Path;
 
 fn main() {
-    let input = "..\\INPUT06.txt";
+    let input = "INPUT06.txt";
     part1(input);
     part2(input);
 }

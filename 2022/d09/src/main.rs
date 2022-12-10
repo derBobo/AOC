@@ -11,7 +11,7 @@ enum Direction {
     Down,
 }
 fn main() {
-    let input = "..\\INPUT09.txt";
+    let input = "INPUT09.txt";
     let moves = parse(input);
     part1(moves.clone());
     part2(moves);

@@ -16,7 +16,7 @@ fn main() {
     let part1 = find_ways_part1(&"start".to_string(), &connections);
 
     println!("{}", part1.len());
-    println!("{}", part2.len());
+    //println!("{}", part2.len());
 }
 
 fn find_ways_part1(current: &String, possible_connections: &Vec<[String; 2]>) -> Vec<String> {

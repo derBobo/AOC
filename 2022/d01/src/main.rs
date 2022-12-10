@@ -35,7 +35,7 @@ fn part2(calories:&Vec<i32>){
     println!("result part 2 {}",calories.iter().rev().take(3).sum::<i32>());
 }
 fn main() {
-    let input = "..\\INPUT01.txt";
+    let input = "INPUT01.txt";
     let calories = parse(input);
     part1(&calories);
     part2(&calories);

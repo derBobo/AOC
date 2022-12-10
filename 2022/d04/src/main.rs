@@ -55,7 +55,7 @@ fn part2(areas: &Vec<((u32, u32), (u32, u32))>) {
     println!("part 2:{}", counter)
 }
 fn main() {
-    let input = "..\\INPUT04.txt";
+    let input = "INPUT04.txt";
     let areas = parse(input);
     part1(&areas);
     part2(&areas);

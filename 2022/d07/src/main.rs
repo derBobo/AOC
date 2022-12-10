@@ -3,7 +3,7 @@ use std::io::{BufRead, BufReader};
 use std::path::Path;
 
 fn main() {
-    let input = "..\\INPUT07.txt";
+    let input = "INPUT07.txt";
     let lines = lines_from_file(input);
     let mut dirs = Vec::new();
     let total_size = parse(&mut lines.into_iter(), &mut dirs);

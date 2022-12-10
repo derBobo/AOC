@@ -3,7 +3,7 @@ use std::io::{BufRead, BufReader};
 use std::path::Path;
 
 fn main() {
-    let input = "..\\INPUT08.txt";
+    let input = "INPUT08.txt";
     let trees = parse(input);
     part1(&trees);
     part2(&trees);

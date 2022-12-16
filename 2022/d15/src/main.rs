@@ -114,30 +114,7 @@ fn get_x_range(signal: (i32, i32), beacon: (i32, i32), y: i32) -> Option<Range<i
         Some(signal.0 - (man - dist_to_row)..signal.0 + (man - dist_to_row))
     }
 }
-/*fn no_beacon_in_range(
-    pairs: &Vec<((i32, i32), (i32, i32))>,
-    x_range: Range<i32>,
-    y_range: Range<i32>,
-) -> HashSet<(i32, i32)> {
-    let mut no_beacons = HashSet::new();
-    for i in 0..pairs.len() {
-        let man = manhattan_distance(&pairs[i].0, &pairs[i].1);
-        let x_min = max(pairs[i].0 .0 - man, x_range.start);
-        let x_max = min(pairs[i].0 .0 + man + 1, x_range.end);
-        for x in x_min..x_max {
-            let n = (man - (x - pairs[i].0 .0).abs()).abs();
-            let y_min = max(pairs[i].0 .1 - n, y_range.start);
-            let y_max = min(pairs[i].0 .1 + n + 1, y_range.end);
-            for y in y_min..y_max {
-                no_beacons.insert((x, y));
-            }
-        }
-    }
-    for i in 0..pairs.len() {
-        no_beacons.remove(&(pairs[i].1 .0, pairs[i].1 .1));
-    }
-    no_beacons
-}*/
+
 fn parse(path: &str) -> Vec<((i32, i32), (i32, i32))> {
     let lines = lines_from_file(path);
     let signals_and_beacons: Vec<((i32, i32), (i32, i32))> = lines

@@ -11,11 +11,11 @@ fn main() {
 }
 
 fn part2(blocks: &HashSet<(i32, i32, i32)>) {
-    let x_max = blocks.iter().map(|x| x.0).max().unwrap() + 2;
+    let x_max = blocks.iter().map(|x| x.0).max().unwrap() + 1;
     let x_min = blocks.iter().map(|x| x.0).min().unwrap() - 1;
-    let y_max = blocks.iter().map(|x| x.1).max().unwrap() + 2;
+    let y_max = blocks.iter().map(|x| x.1).max().unwrap() + 1;
     let y_min = blocks.iter().map(|x| x.1).min().unwrap() - 1;
-    let z_max = blocks.iter().map(|x| x.2).max().unwrap() + 2;
+    let z_max = blocks.iter().map(|x| x.2).max().unwrap() + 1;
     let z_min = blocks.iter().map(|x| x.2).min().unwrap() - 1;
     let mut sum = 0;
     let mut expanded = HashSet::new();

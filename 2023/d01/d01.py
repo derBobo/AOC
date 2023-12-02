@@ -1,10 +1,6 @@
 import re
 
 
-def main():
-    filename = "Input01.txt"
-    part1(filename)
-    part2(filename)
 
 
 def part1(filename):
@@ -71,6 +67,6 @@ def part2(filename):
         sum += int(nums[0] + nums[len(nums) - 1])
     print(sum)
 
-
-if __name__ == '__main__':
-    main()
+filename = "Input01.txt"
+part1(filename)
+part2(filename)

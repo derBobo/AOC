@@ -1,17 +1,21 @@
-def part1(dirs, nodes):
-    node = "AAA"
+def simulate(start, dirs, nodes, end_cond):
     steps = 0
-    while node != "ZZZ":
+    while steps == 0 or not end_cond(start):
         for dir in dirs:
             match dir:
                 case "L":
-                    node = nodes[node][0]
+                    start = nodes[start][0]
                 case "R":
-                    node = nodes[node][1]
+                    start = nodes[start][1]
             steps += 1
-            if node == "ZZZ":
-                break
-    print(steps)
+    return (start, steps)
+
+
+def part1(dirs, nodes):
+    node = "AAA"
+    res = simulate(node, dirs, nodes, lambda x: x == "ZZZ")
+    print(res[1])
+
 
 def gcd(numbers):
     for i in range(0, len(numbers) - 1):
@@ -21,26 +25,13 @@ def gcd(numbers):
 
     return numbers[0]
 
+
 def part2(dirs, nodes):
-    start_nodes = [x for x in nodes if x.endswith("A")]
-    steps = 0
-    steps_to_z =[]
-    for node in start_nodes:
-        steps = 0
-        while not node.endswith("Z"):
-            for dir in dirs:
-                match dir:
-                    case "L":
-                        node = nodes[node][0]
-                    case "R":
-                        node = nodes[node][1]
-                steps += 1
-        steps_to_z.append(steps)
-    gcds= gcd(steps_to_z)
-    scm=gcds
-    print(steps_to_z)
-    for steps in steps_to_z:
-        scm*=steps/gcds
+    to_z = [simulate(x, dirs, nodes, lambda x: x[-1] == 'Z') for x in nodes if x[-1] == 'A']
+    gcds = gcd([x[1] for x in to_z])
+    scm = gcds
+    for steps in to_z:
+        scm *= steps[1] / gcds
     print(int(scm))
 
 
@@ -55,6 +46,6 @@ for Line in Lines[2:]:
     dirs = split[1].strip("() \n")
     dirs_splitted = dirs.split(", ")
     nodes[key] = (dirs_splitted[0], dirs_splitted[1])
-part1(directions,nodes)
+part1(directions, nodes)
 
 part2(directions, nodes)

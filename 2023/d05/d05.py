@@ -1,5 +1,4 @@
 import re
-import time
 
 
 def map_to_loc(seed: int, seed_maps):
